@@ -113,6 +113,12 @@ const Login = (props) =>{
         }
     }
 
+<<<<<<< HEAD
+=======
+
+console.log(lr)
+
+>>>>>>> a544120 (forgetcod)
 
     const handleforget = (e)=>{
         e.preventDefault()
@@ -140,6 +146,7 @@ const Login = (props) =>{
                         console.log(response);
                     })
                 }
+<<<<<<< HEAD
             }}
 
 
@@ -167,6 +174,33 @@ const Login = (props) =>{
             })
         }
     }
+=======
+            }else if(lr==='forgetcode'){
+            if(code!==codeinp){
+                setmsg('کد تایید صحیح نیست')
+            }else if(password===repassword){
+                setmsg('رمز عبور و تکرا آن یکسان نیست')
+            }else if(password.length<4){
+                setmsg('رمزعبور کوتاه است')
+            }else{
+
+                axios({
+                    method: 'post',
+                    url: "http://localhost:5000/api/setnewpass",
+                    data: {phone:phone, password:password}
+                }).then((response)=>{
+                    if (response.data.act === true){
+                        setmsg(response.data.msg)
+                        setLr('login')
+
+                    }else{
+                        setmsg(response.data.msg)
+                    };
+                }).catch((response)=>{
+                    console.log(response);
+                })
+            }}}
+>>>>>>> a544120 (forgetcod)
 
     if(mode==='login' && lr==='login'){
         return (
