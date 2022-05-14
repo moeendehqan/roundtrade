@@ -98,6 +98,10 @@ def setnewpass():
       if len(user) >= 1:
             alarm_collection.delete_one({'phone':phone})
             user_colection.insert_one({'phone':phone, 'password':password})
+            return json.dumps({'act':True, 'msg':'رمز عبور تغییر کرد'})
+            print(000000000)
+      else:
+            return json.dumps({'act':False, 'msg':'خطا'})
 
 
 

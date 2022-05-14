@@ -8,7 +8,7 @@ const Home = () => {
         e.preventDefault()
         setmode(mode)
     }
-console.log(mode)
+
 
     if (mode==='home' || mode==='login'){
         return(

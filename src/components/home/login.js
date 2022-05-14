@@ -13,7 +13,6 @@ const Login = (props) =>{
     const mode = props.mode
     const [lr, setLr] = useState('login')
     const handleLr = (e,tf)=>{setLr(tf)}
-    console.log(lr)
 
     const [phone, setphone] = useState('')
     const changephone = (e)=>{setphone(e.target.value)}
@@ -114,14 +113,15 @@ const Login = (props) =>{
         }
     }
 
-    console.log(lr)
+
+console.log(lr)
+
 
     const handleforget = (e)=>{
         e.preventDefault()
         if(lr!=='forget'){
             setLr('forget')
-        }else{
-            if(lr==='forget'){
+        }else if(lr==='forget'){
                 if(phone[0]!=='0' || phone[1]!=='9' || phone.length!==11){
                     setmsg('شماره همراه را صحیح وارد کنید')
                     filphone.current.focus();
@@ -143,11 +143,31 @@ const Login = (props) =>{
                         console.log(response);
                     })
                 }
-            }
-        }
+            }else if(lr==='forgetcode'){
+            if(code!==codeinp){
+                setmsg('کد تایید صحیح نیست')
+            }else if(password===repassword){
+                setmsg('رمز عبور و تکرا آن یکسان نیست')
+            }else if(password.length<4){
+                setmsg('رمزعبور کوتاه است')
+            }else{
 
+                axios({
+                    method: 'post',
+                    url: "http://localhost:5000/api/setnewpass",
+                    data: {phone:phone, password:password}
+                }).then((response)=>{
+                    if (response.data.act === true){
+                        setmsg(response.data.msg)
+                        setLr('login')
 
-    }
+                    }else{
+                        setmsg(response.data.msg)
+                    };
+                }).catch((response)=>{
+                    console.log(response);
+                })
+            }}}
 
 
     if(mode==='login' && lr==='login'){
@@ -172,7 +192,7 @@ const Login = (props) =>{
                     <br/>
                     <button className='lsub' onClick={(e)=>handleLogin(e)}>تایید</button>
                     <br/>
-                    <a onClick={(e)=>handleforget(e)}>بازیابی رمزعبور</a>
+                    <button className='btmfrg' onClick={(e)=>handleforget(e)}>بازیابی رمزعبور</button>
                 </div>
     
             </div>
