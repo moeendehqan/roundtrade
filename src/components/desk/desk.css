@@ -64,5 +64,7 @@
 
 .iconmenu{
     height: 70px;
-    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
