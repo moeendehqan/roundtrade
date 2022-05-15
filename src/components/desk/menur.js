@@ -3,16 +3,17 @@ import {useState} from 'react'
 const Menur = (props)=>{
 
 
-    return(
-        <div>
-            <div className='menur'>
+    if(Menur){
+        return(
+            <div>
+                <div className='menur'>
+    
+                </div>
                 
-            
-
             </div>
-            
-        </div>
-    )
+        )
+    }
+
 }
 
 
