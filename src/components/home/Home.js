@@ -3,6 +3,7 @@ import {useState} from 'react'
 import Login from './login'
 import Desk from '../desk/desk'
 import {setCookie, getCookie} from '../cookie/cookie'
+import axios from 'axios'
 
 const Home = () => {
     const [mode, setmode] = useState('home')
@@ -23,7 +24,7 @@ const Home = () => {
             }else{
                 setCookie('phone',cookiesetphone,0)
             };
-        })}
+        }).catch((response)=>{console.log(response);}}
 
 
 
