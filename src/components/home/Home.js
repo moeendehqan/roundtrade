@@ -24,9 +24,7 @@ const Home = () => {
                 setmsg(response.data.login)
                 setCookie('phone',cookiesetphone,-5)
             };
-        }).catch((response)=>{
-            console.log(response);
-        }
+        }).catch((response)=>{console.log(response)}
     }
 
 
