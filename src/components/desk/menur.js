@@ -6,7 +6,7 @@ const Menur = (props)=>{
     return(
         <div>
             <div className='menur'>
-                <img src={require('../home/02.png')} alt='Logo RoundTrade'></img>
+            <button className='dmenu'><img src={require('./img/hmb.png')}></img></button>
 
             </div>
             
