@@ -14,7 +14,7 @@ sms = Api('9011010959','@8F20').sms('soap')
 client = pymongo.MongoClient()
 roundtrade_db = client['roundtrade']
 user_colection = roundtrade_db['user']
-alarm_collection = roundtrade_db['alarm']
+listsymbol_db = roundtrade_db['listsymbol']
 
 
 app = Flask(__name__)
@@ -113,6 +113,9 @@ def setnewpass():
             return json.dumps({'act':False, 'msg':'خطا'})
 
 
+@app.route('/api/listsymbol', methods=["POST"])
+def listsymbol():
+      listsymbol_df = pd.DataFrame(listsymbol_db.find())
 
 
 
