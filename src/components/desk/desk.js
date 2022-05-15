@@ -12,7 +12,7 @@ const Desk = () =>{
             </nav>
             <main className='mainmenu'>
                 <div>
-                    <img src={require('./img/srkht.png')}></img>
+                    <img className='iconmenu' src={require('./img/srkht.png')}></img>
                 </div>
             </main>
 
