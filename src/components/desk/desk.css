@@ -48,3 +48,11 @@
     right: auto;
     left: auto;
 }
+
+.menur{
+    position: absolute;
+    width: 75%;
+    height: 60%;
+    background-color: #7c89a7;
+
+}
