@@ -18,7 +18,7 @@ const Home = () => {
             data: {phone:cookiesetphone}
         }).then((response)=>{
             if (response.data.login === true){
-                hmod(e,'desk')
+                handleMode(e,'desk')
                 setCookie('phone',cookiesetphone,10)
             }else{
                 setmsg(response.data.login)
