@@ -11,8 +11,9 @@ const Desk = () =>{
                 <img src={require('../home/02.png')} alt='Logo RoundTrade'></img>
             </nav>
             <main className='mainmenu'>
-                <div>
+                <div className='bxmn'>
                     <img className='iconmenu' src={require('./img/srkht.png')}></img>
+                    <h5 className='bxtitl'>هشدار صف</h5>
                 </div>
             </main>
 
