@@ -24,7 +24,7 @@ const Home = () => {
             }else{
                 setCookie('phone',cookiesetphone,0)
             };
-        }).catch((response)=>{console.log(response);}}
+        })}
 
 
 
