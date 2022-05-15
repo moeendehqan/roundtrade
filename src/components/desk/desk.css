@@ -58,13 +58,9 @@
 
 .bxmn{
     width: 25%;
-    justify-content: center;
-
 }
 
 .iconmenu{
     height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
