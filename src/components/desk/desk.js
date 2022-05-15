@@ -10,7 +10,11 @@ const Desk = () =>{
                 <h3>رنـــد تــریـــد</h3>
                 <img src={require('../home/02.png')} alt='Logo RoundTrade'></img>
             </nav>
-            <Menur/>
+            <main className='mainmenu'>
+                <div>
+                    <img src={require('./img/srkht.png')}></img>
+                </div>
+            </main>
 
         </div>
     )
