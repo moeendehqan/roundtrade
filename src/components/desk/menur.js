@@ -3,7 +3,7 @@ import {useState} from 'react'
 const Menur = (props)=>{
 
 
-    if(Menur){
+    if(props.munemode){
         return(
             <div>
                 <div className='menur'>
