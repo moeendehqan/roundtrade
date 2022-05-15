@@ -26,14 +26,25 @@
     font-size:25px;
 }
 
-.dnav button{
-    background-color:#fff;
+.dmenu{
+    background-color:#7c89a7;
     columns: #1e222b;
     font-family: 'IBM Plex Sans Arabic';
-    height:50%;
+    height:40%;
     position: relative;
     top:25%;
-    width:80px;
-    border-radius: 15px;
+    width:40px;
+    border-radius: 5px;
     font-weight: bold;
+
+}
+
+.dmenu img{
+    width: 80%;
+    height: 95%;
+    position: relative;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    left: auto;
 }
