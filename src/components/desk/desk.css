@@ -84,3 +84,18 @@
     text-align: center;
     font-size: 15px;
 }
+
+
+
+.preface{
+    background-image: linear-gradient(to bottom, #DE412F , #ffffff);
+    height:100px;
+    font-family:'IBM Plex Sans Arabic';
+    color: #1e222b;
+    padding: 20px 30px;
+}
+
+.preface ul{
+    margin:15px 25px;
+    font-size:15px;
+}

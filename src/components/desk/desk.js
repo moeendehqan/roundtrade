@@ -1,5 +1,9 @@
 import './desk.css'
 import {useState} from 'react'
+import Panlesaf from './saf'
+
+
+
 const Desk = () =>{
 
     const [act, setAct] = useState('saf')
@@ -19,8 +23,6 @@ const Desk = () =>{
     }
 
 
-
-    console.log(act)
 
     return(
         <div>
@@ -46,6 +48,7 @@ const Desk = () =>{
                     <h5>هشدار حجم معاملات</h5>
                 </div>
             </main>
+            <Panlesaf act={act}/>
         </div>
     )
 }
