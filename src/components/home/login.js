@@ -159,6 +159,7 @@ const Login = (props) =>{
             }).then((response)=>{
                 if (response.data.act === true){
                     setmsg(response.data.msg)
+                    props.hmod(e,'desk')
                 }else{
                     setmsg(response.data.msg)
                 };
