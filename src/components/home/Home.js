@@ -21,7 +21,6 @@ const Home = () => {
                 setmode('desk')
                 setCookie('phone',cookiesetphone,10)
             }else{
-                setmsg(response.data.login)
                 setCookie('phone',cookiesetphone,0)
             };
         }).catch((response)=>{console.log(response)}
