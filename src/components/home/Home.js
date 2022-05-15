@@ -1,6 +1,8 @@
 import './home.css'
 import {useState} from 'react'
 import Login from './login'
+import Desk from '../desk/desk'
+import {setCookie, getCookie} from '../cookie/cookie'
 
 const Home = () => {
     const [mode, setmode] = useState('home')
@@ -8,6 +10,8 @@ const Home = () => {
         e.preventDefault()
         setmode(mode)
     }
+    const cookiesetphone = setCookie('phone')
+    console.log(cookiesetphone)
 
 
     if (mode==='home' || mode==='login'){
@@ -47,6 +51,13 @@ const Home = () => {
     
             </div>
             )}
+    if(mode==='desk'){
+        return(
+            <div>
+                <Desk/>
+            </div>
+        )
+    }
 
 }
 

@@ -1,13 +1,15 @@
 import {useState,useRef} from 'react'
 import axios from 'axios'
-
-
+import { useCookies } from 'react-cookie';
+import {setCookie, getCookie} from '../cookie/cookie'
 
 
 const Login = (props) =>{
     const filphone = useRef(null)
     const filpass = useRef(null)
     const filcodeinp = useRef(null)
+
+
 
 
     const mode = props.mode
@@ -72,6 +74,7 @@ const Login = (props) =>{
                     if (response.data.register === true){
                         setmsg(response.data.msg)
                         props.hmod(e,'desk')
+                        setCookie('phone',phone,10)
                     }else{
                         setmsg(response.data.msg)
                     };
@@ -101,6 +104,7 @@ const Login = (props) =>{
                     if (response.data.login === true){
                         setmsg(response.data.msg)
                         console.log('login true')
+                        setCookie('phone',phone,10)
                         props.hmod(e,'desk')
                     }else{
                         setmsg(response.data.msg)
@@ -159,6 +163,7 @@ const Login = (props) =>{
             }).then((response)=>{
                 if (response.data.act === true){
                     setmsg(response.data.msg)
+                    setCookie('phone',phone,10)
                     props.hmod(e,'desk')
                 }else{
                     setmsg(response.data.msg)
