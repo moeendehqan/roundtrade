@@ -1,6 +1,6 @@
 import {useState,useRef} from 'react'
 import axios from 'axios'
-import {setCookie, getCookie} from '../cookie/cookie'
+import {setCookie} from '../cookie/cookie'
 
 
 const Login = (props) =>{
