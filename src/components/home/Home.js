@@ -18,11 +18,11 @@ const Home = () => {
             data: {phone:cookiesetphone}
         }).then((response)=>{
             if (response.data.login === true){
-                props.hmod(e,'desk')
+                hmod(e,'desk')
                 setCookie('phone',cookiesetphone,10)
             }else{
                 setmsg(response.data.login)
-                setCookie('phone',cookiesetphone,-5)
+                setCookie('phone',cookiesetphone,0)
             };
         }).catch((response)=>{console.log(response)}
     }
