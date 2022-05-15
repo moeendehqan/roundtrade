@@ -63,7 +63,7 @@
     font-family:'IBM Plex Sans Arabic';
 }
 .bxmnclck{
-    background-color: #DE412F;
+    background-color: #efefef;
     width: 25%;
     height: 100%;
     font-family:'IBM Plex Sans Arabic';
@@ -88,7 +88,7 @@
 
 
 .preface{
-    background-image: linear-gradient(to bottom, #DE412F , #ffffff);
+    background-image: linear-gradient(to bottom, #efefef , #ffffff);
     height:100px;
     font-family:'IBM Plex Sans Arabic';
     color: #1e222b;
