@@ -6,9 +6,9 @@ const Desk = () =>{
     return(
         <div>
             <nav className='dnav'>
-                <img src={require('../home/02.png')} alt='Logo RoundTrade'></img>
+                <button className='dmenu'><img src={require('./img/hmb.png')}></img></button>
                 <h3>رنـــد تــریـــد</h3>
-                <button>پروفایل</button>
+                <img src={require('../home/02.png')} alt='Logo RoundTrade'></img>
             </nav>
             میزکار
 
