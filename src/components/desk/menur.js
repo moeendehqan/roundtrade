@@ -2,11 +2,14 @@ import {useState} from 'react'
 
 const Menur = (props)=>{
     const menumode = props.menumode
-    console.log(menumode)
+
     return(
         <div>
-            kkkk
-            {menumode}
+            <div className='menur'>
+                <img src={require('../home/02.png')} alt='Logo RoundTrade'></img>
+
+            </div>
+            
         </div>
     )
 }
