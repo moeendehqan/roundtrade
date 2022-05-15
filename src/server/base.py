@@ -114,68 +114,6 @@ def setnewpass():
 
 
 
-@app.route('/api/setalarmprice', methods=["POST"])
-def setalarmprice():
-      try:
-            data =  request.get_json()
-            evnt = data['evnt']
-            sym = data['sym']
-            prc = data['prc']
-            phone = data['phone']
-            dic_alarm = {'symbol':sym, 'evnt':evnt, 'price':prc, 'phone':phone}
-            rep = alarm_collection.find_one(dic_alarm)
-            if(rep is None):
-                  alarm_collection.insert_one(dic_alarm)
-                  return json.dumps({'msg':'هشدار ثبت شد'})
-            else:
-                  return json.dumps({'msg':'این هشدار قبلا ثبت شده'})
-      except:
-            return json.dumps({'msg':'هشدار ثبت نشد مجدد تلاش کنید'})
-
-@app.route('/api/listalarm', methods=["POST"])
-def listalarm():
-      data =  request.get_json()
-      phone = data['phone']
-      evnt = data['evnt']
-      rep = alarm_collection.find({'phone':phone, 'evnt':evnt})
-      listalarm = []
-      for dic in rep:
-            dic['iid'] = str(dic['_id'])
-            del dic['_id']
-            listalarm.append(dic)
-      print((listalarm))
-      return json.dumps(listalarm)
-
-@app.route('/api/delalarmprice', methods=["POST"])
-def delalarmprice():
-      try:
-            data =  request.get_json()
-            idd = data['id']
-            alarm_collection.delete_one({"_id":ObjectId(idd)})
-            return json.dumps({'act':True})
-      except:
-            return json.dumps({'act':False})
-
-
-@app.route('/api/setalarmrsi', methods=["POST"])
-def setalarmrsi():
-      print(request.get_json())
-      try:
-            data =  request.get_json()
-            sym = data['sym']
-            lenrsi = data['lenrsi']
-            limit = data['limit']
-            phone = data['phone']
-            dic_alarm = {'symbol':sym, 'evnt':'RSI', 'lenrsi':lenrsi, 'limit':limit, 'phone':phone}
-            rep = alarm_collection.find_one(dic_alarm)
-            if(rep is None):
-                  alarm_collection.insert_one(dic_alarm)
-                  return json.dumps({'msg':'هشدار ثبت شد'})
-            else:
-                  return json.dumps({'msg':'این هشدار قبلا ثبت شده'})
-      except:
-            return json.dumps({'msg':'هشدار ثبت نشد مجدد تلاش کنید'})
-
 
 
 if __name__ == '__main__':
