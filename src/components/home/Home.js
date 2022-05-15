@@ -10,7 +10,7 @@ const Home = () => {
         e.preventDefault()
         setmode(mode)
     }
-    const cookiesetphone = setCookie('phone')
+    const cookiesetphone = getCookie('phone')
     console.log(cookiesetphone)
 
 
