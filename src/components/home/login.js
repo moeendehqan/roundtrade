@@ -143,61 +143,6 @@ const Login = (props) =>{
 
             }}
 
-
-    const setforget =(e)=>{
-        e.preventDefault()
-        if(code!==codeinp){
-            setmsg('کد تایید صحیح نیست')
-        }else if(password===repassword){
-            setmsg('رمز عبور و تکرا آن یکسان نیست')
-        }else if(password.length<4){
-            setmsg('رمزعبور کوتاه است')
-        }else{
-            axios({
-                method: 'post',
-                url: "http://localhost:5000/api/setnewpass",
-                data: {phone:phone, password:password}
-            }).then((response)=>{
-                if (response.data.act === true){
-                    setmsg(response.data.msg)
-                }else{
-                    setmsg(response.data.msg)
-                };
-            }).catch((response)=>{
-                console.log(response);
-            })
-        }
-    
-
-            }else if(lr==='forgetcode'){
-            if(code!==codeinp){
-                setmsg('کد تایید صحیح نیست')
-            }else if(password===repassword){
-                setmsg('رمز عبور و تکرا آن یکسان نیست')
-            }else if(password.length<4){
-                setmsg('رمزعبور کوتاه است')
-            }else{
-
-                axios({
-                    method: 'post',
-                    url: "http://localhost:5000/api/setnewpass",
-                    data: {phone:phone, password:password}
-                }).then((response)=>{
-                    if (response.data.act === true){
-                        setmsg(response.data.msg)
-                        setLr('login')
-
-                    }else{
-                        setmsg(response.data.msg)
-                    };
-                }).catch((response)=>{
-                    console.log(response);
-                })
-            }}
-
-            
-
-
     const setforget =(e)=>{
         e.preventDefault()
         if(code!==codeinp){
@@ -223,6 +168,8 @@ const Login = (props) =>{
         }
     }
 
+
+    
     if(mode==='login' && lr==='login'){
         return (
             <div className="login" >
