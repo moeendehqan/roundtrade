@@ -146,8 +146,8 @@ const Login = (props) =>{
     const setforget =(e)=>{
         e.preventDefault()
         if(code.toString()!==codeinp.toString()){
-            setmsg('کد0000تایید صحیح نیست')
-        }else if(password===repassword){
+            setmsg('کد تایید صحیح نیست')
+        }else if(password!==repassword){
             setmsg('رمز عبور و تکرا آن یکسان نیست')
         }else if(password.length<4){
             setmsg('رمزعبور کوتاه است')
