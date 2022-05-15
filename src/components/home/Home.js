@@ -11,7 +11,24 @@ const Home = () => {
         setmode(mode)
     }
     const cookiesetphone = getCookie('phone')
-    console.log(cookiesetphone)
+    if(cookiesetphone.length>0){
+        axios({
+            method: 'post',
+            url: "http://localhost:5000/api/logincookie",
+            data: {phone:cookiesetphone}
+        }).then((response)=>{
+            if (response.data.login === true){
+                props.hmod(e,'desk')
+                setCookie('phone',cookiesetphone,10)
+            }else{
+                setmsg(response.data.login)
+                setCookie('phone',cookiesetphone,-5)
+            };
+        }).catch((response)=>{
+            console.log(response);
+        }
+    }
+
 
 
     if (mode==='home' || mode==='login'){

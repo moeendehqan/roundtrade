@@ -102,10 +102,8 @@ const Login = (props) =>{
                 }).then((response)=>{
                     if (response.data.login === true){
                         setmsg(response.data.msg)
-                        console.log('login true')
                         setCookie('phone',phone,10)
                         props.hmod(e,'desk')
-                        console.log(getCookie('phone'))
                     }else{
                         setmsg(response.data.msg)
                     };

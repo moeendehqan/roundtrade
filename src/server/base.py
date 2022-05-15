@@ -66,6 +66,15 @@ def login():
       else:
             return json.dumps({'login':False, 'msg': 'شماره موبایل ثبت نام نشده'})
 
+@app.route('/api/logincookie', methods=["POST"])
+def logincookie():
+      data =  request.get_json()
+      phone = data['phone']
+      user = pd.DataFrame(user_colection.find({'phone':phone}))
+      if len(user) > 0:
+            return json.dumps({'login':True})
+      else:
+            return json.dumps({'login':False})
 
 
 
