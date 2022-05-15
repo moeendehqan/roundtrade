@@ -1,6 +1,5 @@
 import {useState,useRef} from 'react'
 import axios from 'axios'
-import { useCookies } from 'react-cookie';
 import {setCookie, getCookie} from '../cookie/cookie'
 
 
